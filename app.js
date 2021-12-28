@@ -1,28 +1,27 @@
-const title = document.querySelector(".catchName h1");
+const h1 = document.querySelector(".catchName h1");
 
 function handleTitleClick(){
-  title.style.color = "green";
+  h1.style.color = "green";
   console.log("changed color.");
 }
 
 function handleMouseEnter(){
-  title.innerHTML = "mouse is here.";
+  h1.innerText = "mouse is here.";
   console.log("mouse enter");
 }
 
 function handleMouseLeave(){
-  title.innerHTML = "mouse is gone!";
+  h1.innerText = "mouse is gone!";
+  h1.style.color = "black";
   console.log("mouse leave!");
 }
+function handleWindowResize(){
+  document.body.style.backgroundColor = "tomato";
+}
 
-title.addEventListener("click" , handleTitleClick);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
+h1.onclick = handleTitleClick;
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
 
 
-
-// 위에 보이는 코드가 제대로 실행 되지가 않음. 
-// 뭐가 잘못 된지 모르겠다...
-// console.log 실행시에는 잘 작동함.
-// 해결 -> innertext가 아니라 innerHTML로 하니깐 변환됨.. 
-// why?? : 
+window.addEventListener("resize", handleWindowResize);
