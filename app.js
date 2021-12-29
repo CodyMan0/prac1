@@ -1,27 +1,8 @@
-const h1 = document.querySelector(".catchName h1");
+const h1 = document.querySelector("div.catchup h1");
 
 function handleTitleClick(){
-  h1.style.color = "green";
-  console.log("changed color.");
+  h1.classList.toggle("active");
 }
 
-function handleMouseEnter(){
-  h1.innerText = "mouse is here.";
-  console.log("mouse enter");
-}
 
-function handleMouseLeave(){
-  h1.innerText = "mouse is gone!";
-  h1.style.color = "black";
-  console.log("mouse leave!");
-}
-function handleWindowResize(){
-  document.body.style.backgroundColor = "tomato";
-}
-
-h1.onclick = handleTitleClick;
-h1.addEventListener("mouseenter", handleMouseEnter);
-h1.addEventListener("mouseleave", handleMouseLeave);
-
-
-window.addEventListener("resize", handleWindowResize);
+h1.addEventListener("click", handleTitleClick);
